@@ -1,0 +1,7 @@
+.galleryCard img{
+    width: 600px;
+}
+.slider {
+    display: flex;
+    justify-content: space-between;
+}
