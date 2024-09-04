@@ -1,42 +1,130 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.post-enter {
+    transform: translateX(-350px);
   }
-  to {
-    transform: rotate(360deg);
+  .post-enter-active {
+    transform: translate(0px);
+    transition: all 500ms ease-in;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  .post-exit {
+    opacity: 1;
   }
+  .post-exit-active {
+    transform: translateX(-350px);
+    transition: all 500ms ease-in;
+  }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50deg,50deg);
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
+
+.header {
+  background-color: #333;
+  padding: 10px;
 }
 
-.card {
-  padding: 2em;
+.nav {
+  display: flex;
+  justify-content: space-around;
 }
 
-.read-the-docs {
-  color: #888;
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-link:hover {
+  color: #ffcc00;
+}
+/* MySelect.module.css */
+
+.mySelect {
+  width: 200px; /* Задает ширину селекта */
+  padding: 10px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругление углов */
+  border: 1px solid #ccc; /* Цвет и ширина границы */
+  background-color: #f9f9f9; /* Цвет фона */
+  font-size: 16px; /* Размер шрифта */
+  color: #333; /* Цвет текста */
+  outline: none; /* Убирает синюю рамку при фокусе */
+  transition: border-color 0.3s ease; /* Плавный переход для границы */
+}
+
+.mySelect:hover {
+  border-color: #888; /* Цвет границы при наведении */
+}
+
+.mySelect:focus {
+  border-color: #555; /* Цвет границы при фокусе */
+}
+
+.mySelect option {
+  padding: 10px; /* Внутренние отступы для опций */
+  color: #333; /* Цвет текста для опций */
+  background-color: #fff; /* Цвет фона для опций */
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.postItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px auto;
+  /* text-align: center; */
+  width: 80%;
+  overflow-wrap: break-word;
+}
+
+.textContainer {
+  display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 60px;
+width: 80%;
+
+  /* text-align: center; */
+  /* align-items: center; */
+}
+
+.title {
+  font-weight: bold;
+  width: 30%;
+}
+
+.content {
+  margin-top: 5px;
+  color: #555;
+  width: 60%;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }

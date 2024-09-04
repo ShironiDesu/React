@@ -1,0 +1,28 @@
+/* MySelect.module.css */
+
+.mySelect {
+    width: 200px; /* Задает ширину селекта */
+    padding: 10px; /* Внутренние отступы */
+    border-radius: 5px; /* Скругление углов */
+    border: 1px solid #ccc; /* Цвет и ширина границы */
+    background-color: #f9f9f9; /* Цвет фона */
+    font-size: 16px; /* Размер шрифта */
+    color: #333; /* Цвет текста */
+    outline: none; /* Убирает синюю рамку при фокусе */
+    transition: border-color 0.3s ease; /* Плавный переход для границы */
+  }
+  
+  .mySelect:hover {
+    border-color: #888; /* Цвет границы при наведении */
+  }
+  
+  .mySelect:focus {
+    border-color: #555; /* Цвет границы при фокусе */
+  }
+  
+  .mySelect option {
+    padding: 10px; /* Внутренние отступы для опций */
+    color: #333; /* Цвет текста для опций */
+    background-color: #fff; /* Цвет фона для опций */
+  }
+  

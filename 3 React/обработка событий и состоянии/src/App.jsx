@@ -1,32 +1,28 @@
-import { useState } from 'react'
-import AddAndDelete from './AddAndDelete'
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Navigate, Route, Routes } from 'react-router-dom';
+import Header from './Header';
 
-import './App.css'
-import PostList from './PostList'
+import './App.css';
+import AppRouter from './AppRouter';
+import { useState } from 'react';
+import { AuthContext } from './context/context';
+import { useContext } from 'react';
 
 function App() {
- const [posts,setPosts] = useState([{ id: 1, title: "First Post", content: "This is the content of the first post." },
- { id: 2, title: "Second Post", content: "This is the content of the second post." },
- { id: 3, title: "Third Post", content: "This is the content of the third post." }
-])
-const deletePost = (id) =>{
-  setPosts(()=>{
-    const newPostsArr = [...posts]
-    const indexToDelete = newPostsArr.findIndex(post => post.id === id);
-    if (indexToDelete !== -1) {
-      
-      newPostsArr.splice(indexToDelete, 1);
+  const [isAuth,setIsAuth] = useState(false)
+  useEffect(()=>{
+    if(localStorage.getItem('auth') === 'true') {
+      setIsAuth(true)
     }
-    
-    return newPostsArr;
-  })
-}
+  },[])
   return (
-    <>
-    <AddAndDelete posts={posts} setPosts={setPosts}/>
-     <PostList posts={posts} deletePost={deletePost}></PostList>
-    </>
-  )
+    <AuthContext.Provider value={{isAuth,setIsAuth}}>
+    <Router>
+      <Header />
+      <AppRouter></AppRouter>
+    </Router>
+    </AuthContext.Provider>
+  );
 }
 
-export default App
+export default App;

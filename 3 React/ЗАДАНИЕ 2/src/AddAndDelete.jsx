@@ -31,7 +31,7 @@ export default function AddAndDelete({ posts, setPosts }) {
     <div style={styles.container}>
       <input
         type="text"
-        placeholder="Title"
+        placeholder="Name"
         ref={nameInputRef}
         style={styles.input}
       />

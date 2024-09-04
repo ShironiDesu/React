@@ -1,68 +1,176 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+.post-enter {
+    transform: translateX(-350px);
+  }
+  .post-enter-active {
+    transform: translate(0px);
+    transition: all 500ms ease-in;
+  }
+  .post-exit {
+    opacity: 1;
+  }
+  .post-exit-active {
+    transform: translateX(-350px);
+    transition: all 500ms ease-in;
+  }
+  .loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(50deg,50deg);
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    }
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    } 
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.header {
+  background-color: #333;
+  padding: 10px;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+.nav {
   display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  justify-content: space-around;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+.nav-link:hover {
+  color: #ffcc00;
+}
+/* MySelect.module.css */
+
+.mySelect {
+  width: 200px; /* Задает ширину селекта */
+  padding: 10px; /* Внутренние отступы */
+  border-radius: 5px; /* Скругление углов */
+  border: 1px solid #ccc; /* Цвет и ширина границы */
+  background-color: #f9f9f9; /* Цвет фона */
+  font-size: 16px; /* Размер шрифта */
+  color: #333; /* Цвет текста */
+  outline: none; /* Убирает синюю рамку при фокусе */
+  transition: border-color 0.3s ease; /* Плавный переход для границы */
+}
+
+.mySelect:hover {
+  border-color: #888; /* Цвет границы при наведении */
+}
+
+.mySelect:focus {
+  border-color: #555; /* Цвет границы при фокусе */
+}
+
+.mySelect option {
+  padding: 10px; /* Внутренние отступы для опций */
+  color: #333; /* Цвет текста для опций */
+  background-color: #fff; /* Цвет фона для опций */
+}
+* {
+  padding: 0;
+  margin: 0;
+}
+.postItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  margin: 10px auto;
+  /* text-align: center; */
+  width: 80%;
+  overflow-wrap: break-word;
+}
+
+.textContainer {
+  display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 60px;
+width: 80%;
+
+  /* text-align: center; */
+  /* align-items: center; */
+}
+
+.title {
+  font-weight: bold;
+  width: 30%;
+}
+
+.content {
+  margin-top: 5px;
+  color: #555;
+  width: 60%;
+}
+
+.deleteButton {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
   cursor: pointer;
-  transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* index.css */
+.post-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+.post-title {
+  font-size: 24px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.post-body {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+  color: #555;
+}
+
+.comments-title {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.comment-item {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.comment-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.loading,
+.not-found {
+  text-align: center;
+  margin-top: 20px;
+  color: red;
 }
