@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.balance {
+  margin: 20px 0;
+}
+
+.actions input {
+  padding: 10px;
+  margin-right: 10px;
+  width: 150px;
+}
+
+.actions button {
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.transactions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.transactions li {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
