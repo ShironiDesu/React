@@ -1,0 +1,16 @@
+{
+  "todos": [
+    {
+      "id": "1",
+      "category": "home",
+      "comptleted": false,
+      "title": "Купить молоко"
+    },
+    {
+      "id": "da348e23-bec3-4b41-b121-4ee534e5c608",
+      "complteted": false,
+      "title": "sdsddsds",
+      "category": "home"
+    }
+  ]
+}
