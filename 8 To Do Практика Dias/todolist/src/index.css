@@ -1,0 +1,244 @@
+/* loader.css */
+/* loader.css */
+
+/* General Styles */
+body {
+  background-color: #f4f4f4;
+  color: #333;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  position: relative;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: teal;
+  width: 0;
+  z-index: 1000;
+}
+
+.progress-bar.animate {
+  animation: fill-bar 1s forwards;
+}
+
+.todoList {
+  margin: 20px 0;
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  width: calc(100% - 90px); /* Adjust width to fit the button */
+  margin-right: 10px;
+}
+
+button {
+  padding: 10px 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: teal;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #005a5b;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+li:last-child {
+  border-bottom: none;
+}
+
+.deleted-todos {
+  margin-top: 20px;
+}
+
+.deleted-todos h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  color: #333;
+}
+
+.deleted-todos ul {
+  padding: 0;
+  margin: 0;
+}
+
+.deleted-todos li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  background-color: #fafafa;
+}
+
+.deleted-todos span {
+  flex: 1;
+}
+.container {
+  position: relative;
+}
+
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 5px;
+  background-color: teal;
+  width: 0;
+  z-index: 1000;
+}
+
+.progress-bar.animate {
+  animation: fill-bar 1s forwards;
+}
+
+.todo-item {
+  position: relative; /* Needed for positioning the border */
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for sliding and fading */
+  overflow: hidden; /* Hide content that slides out */
+}
+
+.todo-item.deleting {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+.todo-item.deleting::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Thickness of the top line */
+  background: red; /* Color of the top line */
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: line-expand 0.5s forwards;
+}
+/* Styles for ToDoItem component */
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Transition for deleting animation */
+}
+
+.todo-item.deleting {
+  background-color: #f8d7da;
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+.todo-item div {
+  display: flex;
+  align-items: center;
+}
+
+.todo-item span {
+  flex: 1;
+  padding-right: 10px;
+  font-size: 16px;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item button {
+  padding: 5px 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  background-color: teal;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.todo-item button:hover {
+  background-color: #005a5b;
+}
+
+.todo-item button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+.todo-item button:not(:last-child) {
+  margin-right: 5px;
+}
+
+.todo-item span[contenteditable="true"] {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+  min-width: 100px;
+}
+
+.todo-item span[contenteditable="true"]:focus {
+  outline: none;
+  border-color: teal;
+}
+
+@keyframes line-expand {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes fill-bar {
+  to {
+    width: 100%;
+  }
+}
